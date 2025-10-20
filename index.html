@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邑南町青少年旅行村 | 公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a><i class="fa-solid fa-tree fa-lg"></i></a>
+                <a href="index.html">邑南町青少年旅行村</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">３つの特徴</a></li>
+                    <li><a href="#sites">施設のご紹介</a></li>
+                    <li><a href="#price">料金</a></li>
+                    <li><a href="#access">アクセス・予約</a></li>
+                    <li><a href="https://www.instagram.com/ohnan.seishonenryokomura/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="img\under_construction.jpg" alt="緑に囲まれたキャンプ場の風景" class="hero-image">
+            <div class="hero-overlay">
+                <h1>日常を忘れ、自然とひとつになる場所。</h1>
+                <p>自然の中でキャンプやプールをお楽しみください。</p>
+                <a href="#access" class="button primary-button">今すぐ予約する</a>
+            </div>
+        </section>
+        <section id="news" class="section news-section">
+            <div class="container">
+                <a><i class="fa-solid fa-circle-info fa-2x"></i></a>
+                <h2>お知らせ</h2>
+                <ul class="news-list">
+                    <li id="news-list"></li>
+                    <!-- <li><time datetime="2025-10-15">2025.10.15</time> 【重要】冬季営業に関するお知らせを掲載しました。</li>
+                    <li><time datetime="2025-10-01">2025.10.01</time> プールは今季の営業を終了いたしました。</li>
+                    <li><time datetime="2025-09-10">2025.09.10</time> 11月分の宿泊予約受付を開始しました。</li> -->
+                </ul>
+                <a href="#" class="news-more-link">お知らせ一覧を見る &gt;</a>
+            </div>
+        </section>
+        <section id="features" class="section features">
+            <div class="container">
+                <p>木々に囲まれ夏でも涼しいキャンプ場です。炊事棟ではお湯が使え、温水洗浄トイレもあるなど設備も充実。中国地方では唯一のペット同伴専用の木製柵付きドッグフリーサイトがあり、専用ドッグランでペットと一緒にキャンプを楽しめます。</p>
+                <br>
+                <h2>青少年旅行村の3つの特徴</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-caravan"></i>
+                        <h3>オートキャンプ場</h3>
+                        <p>全３１サイトのオートキャンプが楽しめ、お手洗い・炊事棟などの施設も完備しています。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-dog"></i>
+                        <h3>柵付き専用ドッグラン</h3>
+                        <p>専用ドッグランでペットと一緒にキャンプを楽しめます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fa-solid fa-water-ladder"></i> -->
+                        <i class="fa-solid fa-person-swimming"></i>
+                        <h3>アトラクションプール</h3>
+                        <p>迫力満点のウォータースライダーや、幼児用滑り台なども準備しています。（夏季のみ営業）</p>
+                    </div>
+                    <!-- <div class="feature-item">
+                        <i class="fa-solid fa-person-running"></i>
+                        <h3>多目的グラウンド</h3>
+                        <p>１周３００メートルのトラックを完備するグラウンドで自由に身体を動かすことができます。</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="sites" class="section site-types">
+            <div class="container">
+                <h2>施設のご紹介</h2>
+                <div class="site-grid">
+                    <div class="site-card">
+                        <img src="img\image22_01.jpg" alt="オートキャンプサイトの画像">
+                        <h3>アトラクションプール</h3>
+                        <p>施設内には全長50mの巨大プールに加えて、高さ9m、長さ73mの迫力満点のウォータスライダーも！</P>
+                    </div>
+                    <div class="site-card">
+                        <img src="img\image23.jpg" alt="フリーサイトの画像">
+                        <h3>オートキャンプ場</h3>
+                        <p>木々のささやきや満点の星空を眺めながら、胸いっぱいに深呼吸して自然を思いっきり楽しもう！</p>
+                    </div>
+                    <div class="site-card">
+                        <!-- <img src="img\jonai_map.png" alt="コテージの画像"> -->
+                        <a href="#modal" class="thumbnail-link">
+                        <img src="img\jonai_map.png" alt="クリックして拡大" class="thumbnail">
+                        </a>
+                        <div id="modal" class="modal-window">
+                            <div class="modal-content">
+                                <img src="img\large_jonai_map.png" alt="拡大画像" class="modal-image">
+                                
+                                <a href="#sites" class="modal-close">&times;</a>
+                            </div>
+                        </div>
+                        <h3>場内マップ</h3>
+                        <p>邑南町青少年旅行村を目一杯楽しむための場内マップです。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="price" class="section access-info">
+            <div class="container">
+                <h2>料金</h2>
+                <div class="flex-half">
+                    <div class="half-item">
+                    <h3>入村料：大人800円、小人400円</h3>
+                    <h3>サイト使用料：オート1区画2600円～、AC電源使用料1300円</h3>
+                    <h3>BBQハウス利用料：4時間4000円～（入村料込み）</h3> 
+                    <P>詳細はお問い合わせください</P>              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="section access-info">
+            <div class="container">
+                <h2>アクセス・ご予約</h2>
+                <div class="flex-half">
+                    <div class="half-item">
+                        <h3>📞 お問い合わせ・予約</h3>
+                        <p>●施設利用に関するお問い合わせ</p>
+                        <p class="phone-number">0855-83-0221</p>
+                        <P>●繋がらない場合は下記の番号まで。</P>
+                            　電話　080-2333-5966</p>
+
+                        <a href="#" class="button secondary-button">オンライン予約へ</a>
+                    </div>
+                    <div class="half-item">
+                        <h3>⛺️ 住所</h3>
+                        <p><b>島根県邑智郡邑南町山田４４３－２</b></p>
+                        <br>
+                        <p>浜田自動車道大朝ICから国道261号で江津方面へ。道の駅邑南の里過ぎて1つ目の信号で県道6号へ右折。出羽郵便局のある交差点で右折し一般道で現地へ。大朝ICから16km</p>
+                        <br>
+                        <p>無料駐車場 有（200台） ※大型バス可</p>
+                        <p>無料駐輪場 有</p>
+                    </div> 
+                </div>
+            <!-- https://map.sonysonpo.co.jp/guidecamp/detailMap?account=guidecamp&bid=32010917&pgret=1 ソニー損保のサイト。こっちのほうが情報が詳しい                 -->
+            </div>
+        </section>
+        <section class="section map-section">
+            <div class="container">
+                <!-- <h2>📍 現地へのアクセス</h2> -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=邑南町青少年旅行村&z=15&output=embed"
+                        width="60%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="邑智郡邑南町山田443-2のGoogleマップ"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 邑南町青少年旅行村 All Rights Reserved.</p>
+        </div>
+    </footer>
+  <script src="https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"></script>
+  <script src="js\script.js"></script>
+  </body>
+</html>

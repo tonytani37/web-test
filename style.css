@@ -1,0 +1,483 @@
+/* --- Root Variables & Reset --- */
+:root {
+    --color-primary: #1E8449; /* 深緑 */
+    --color-accent: #A08C69; /* 茶色/ベージュ */
+    --color-text: #333333;
+    --color-background: #F8F8F8;
+    --color-light: #ffffff;
+    --max-content-width: 1000px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #156236;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.section h3 {
+    font-size: 1.0rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    /* border-bottom: 2px solid var(--color-accent); */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, opacity 0.3s;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.primary-button {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: 2px solid var(--color-primary);
+}
+
+.primary-button:hover {
+    background-color: #156236;
+    border-color: #156236;
+    text-decoration: none;
+}
+
+.secondary-button {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: 2px solid var(--color-accent);
+}
+
+.secondary-button:hover {
+    background-color: #8c7857;
+    border-color: #8c7857;
+    text-decoration: none;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: var(--color-light);
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 60vh; /* ビューポートの高さの60% */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 背景に薄いオーバーレイをかけて文字を見やすく */
+    background: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-light);
+}
+
+.hero-overlay h1 {
+    font-size: clamp(2rem, 5vw, 4rem); /* レスポンシブなフォントサイズ */
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Feature Section --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+/* --- Site Types Section --- */
+.site-types {
+    background-color: #EDEDED; /* セクションの背景色を変えて区別 */
+}
+
+.site-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.site-card {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.site-card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.site-card h3 {
+    padding: 15px 15px 0;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+}
+
+.site-card p {
+    padding: 0 15px 15px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* --- Access Info Section --- */
+.flex-half {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.half-item {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--color-accent);
+    border-radius: 8px;
+}
+
+.half-item h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.phone-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin: 10px 0;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-text); /* 濃いグレー */
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    .main-nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 2.2rem;
+    }
+
+    .flex-half {
+        flex-direction: column;
+    }
+    .half-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+}
+
+/* --- 施設紹介セクションのクラス --- */
+
+/* オートキャンプ場 (自然の緑と木の色) */
+.facility-autocamp {
+    background-color: #f7fff2; /* 非常に薄いグリーン */
+    border-left: 5px solid #1E8449; /* 深緑のライン */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.facility-autocamp h3 {
+    color: #1E8449; /* メインカラー */
+    margin-bottom: 10px;
+}
+
+/* プール (水の色、涼しい青) */
+.facility-pool {
+    background-color: #f2faff; /* 非常に薄い水色 */
+    border-left: 5px solid #3182af; /* 青系のライン */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.facility-pool h3 {
+    color: #3182af; /* プールらしい青 */
+    margin-bottom: 10px;
+}
+
+/* 多目的グラウンド (土と芝の色、落ち着いた茶系) */
+.facility-ground {
+    background-color: #fffaf2; /* 非常に薄いベージュ */
+    border-left: 5px solid #A08C69; /* 茶系のライン */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.facility-ground h3 {
+    color: #A08C69; /* アクセントカラー */
+    margin-bottom: 10px;
+}
+
+/* 各施設セクションのタイトルアイコン用スタイル */
+.facility-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+/* --- Google Map セクション --- */
+
+.map-section {
+    padding-top: 0; /* アクセス情報と地図を繋げるためにパディングを調整 */
+    padding-bottom: 60px;
+    background-color: var(--color-light); 
+}
+
+.map-section h2 {
+    /* 既存のh2スタイルを上書きして、地図セクションのタイトルをシンプルにする */
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-bottom: none;
+}
+
+.map-container {
+    /* 地図がコンテナの幅いっぱいに広がるようにする */
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    /* 地図の枠を強調したい場合は以下のスタイルを追加 */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    /* border-radius: 8px; */
+    overflow: hidden; 
+}
+
+.map-container iframe {
+    /* iframeの幅と高さを親要素に対して設定 */
+    width: 80%;
+    /* 高さはHTMLで450pxを指定済み */
+}
+
+/* モバイルでの調整（もし必要であれば） */
+@media (max-width: 768px) {
+    .map-section {
+        padding-bottom: 40px;
+    }
+}
+
+/* --------------------
+   モーダル初期状態（非表示）
+   -------------------- */
+.modal-window {
+    visibility: hidden; /* 通常は見えない */
+    opacity: 0;         /* 透明 */
+    pointer-events: none; /* クリック対象にならない */
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* 最前面に表示 */
+    
+    background: rgba(0, 0, 0, 0.8); /* 半透明の黒い背景 */
+    
+    /* アニメーション用 */
+    transition: all 0.3s;
+}
+
+/* --------------------
+   モーダル表示状態 (クリック時)
+   -------------------- */
+.modal-window:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --------------------
+   コンテンツの配置
+   -------------------- */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 画面中央に配置 */
+    max-width: 90vw; /* 画面幅に合わせて最大幅を指定 */
+    max-height: 90vw;
+    text-align: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100vh; /* ビューポートの高さに合わせて調整 */
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+}
