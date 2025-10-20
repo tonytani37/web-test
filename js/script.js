@@ -21,7 +21,7 @@
         // res.contents.forEach(item => {
         limitedContents.forEach(item => {
             // 日付を整形
-            const formattedDate = new Date(item.updatedAt).toLocaleDateString('ja-JP');
+            const formattedDate = new Date(item.publishedAt).toLocaleDateString('ja-JP');
 
             // 表示するHTML要素を組み立てる
             const articleHtml = `
