@@ -59,7 +59,7 @@ img {
 }
 
 .section h2 {
-    font-size: 2.8rem;
+    font-size: 2.0rem;
     margin-bottom: 40px;
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-accent);
@@ -125,7 +125,7 @@ img {
 }
 
 .logo a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-primary);
 }
