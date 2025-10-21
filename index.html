@@ -20,7 +20,8 @@
                     <li><a href="#features">３つの特徴</a></li>
                     <li><a href="#sites">施設のご紹介</a></li>
                     <li><a href="#price">料金</a></li>
-                    <li><a href="#access">アクセス・予約</a></li>
+                    <li><a href="#resevation">ご予約</a></li>
+                    <li><a href="#access">お問い合わせ・所在地</a></li>
                     <li><a href="https://www.instagram.com/ohnan.seishonenryokomura/" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                 </a>
@@ -36,7 +37,7 @@
             <div class="hero-overlay">
                 <h1>日常を忘れ、自然とひとつになる場所。</h1>
                 <p>自然の中でキャンプやプールをお楽しみください。</p>
-                <a href="#access" class="button primary-button">今すぐ予約する</a>
+                <a href="#resevation" class="button primary-button">キャンプサイトを予約する</a>
             </div>
         </section>
         <section id="news" class="section news-section">
@@ -102,16 +103,24 @@
                         <a href="#modal" class="thumbnail-link">
                         <img src="img\jonai_map.png" alt="クリックして拡大" class="thumbnail">
                         </a>
-                        <div id="modal" class="modal-window">
+                        <!-- <div id="modal" class="modal-window">
                             <div class="modal-content">
                                 <img src="img\large_jonai_map.png" alt="拡大画像" class="modal-image">
                                 
                                 <a href="#sites" class="modal-close">&times;</a>
                             </div>
-                        </div>
+                        </div> -->
                         <h3>場内マップ</h3>
                         <p>邑南町青少年旅行村を目一杯楽しむための場内マップです。</p>
                     </div>
+                </div>
+            </div>
+            <!-- modalで地図を大きく表示させるために、containerから外に出している -->
+            <div id="modal" class="modal-window">
+                <div class="modal-content">
+                    <img src="img\large_jonai_map.png" alt="拡大画像" class="modal-image">
+                    
+                    <a href="#sites" class="modal-close">&times;</a>
                 </div>
             </div>
         </section>
@@ -127,23 +136,46 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="access" class="section access-info">
-            <div class="container">
-                <h2>アクセス・ご予約</h2>
+        <br>
+        <!-- </section>
+       <section id="resevation" class="section access-info"> -->
+            <div class="container"  id="resevation">
+                <h2>ご予約</h2>
                 <div class="flex-half">
                     <div class="half-item">
-                        <h3>📞 お問い合わせ・予約</h3>
-                        <p>●施設利用に関するお問い合わせ</p>
-                        <p class="phone-number">0855-83-0221</p>
-                        <P>●繋がらない場合は下記の番号まで。</P>
-                            　電話　080-2333-5966</p>
-
+                        <h3>キャンプサイトのご予約</h3>
                         <a href="#" class="button secondary-button">オンライン予約へ</a>
+                        <!-- <p>注）別のサイトが開きます。</p> -->
                     </div>
                     <div class="half-item">
-                        <h3>⛺️ 住所</h3>
+                        <h3>注意事項</h3>
+                        <!-- <P>●ご利用開始　4月29日（木）～</P> -->
+                        <P>●ご予約は、90日先まで受付可能です。</P>
+                        <P>●利用日前日の17：00までに、ご予約下さい。</P>
+                        <p>●ご予約は電話で受け付けておりません。</p>
+                        <P>●アーリーチェックイン、レイトチェックアウトの対応はしておりません。</P>
+                        <!-- <p>注）別のサイトが開きます。</p> -->
+                    </div>
+                </div>
+            </div>
+        <br>
+        <!-- </section> -->
+        <!-- <section id="access" class="section access-info"> -->
+            <div class="container" id="access">
+                <h2>お問合せ・所在地</h2>
+                <div class="flex-half">
+                    <div class="half-item">
+                        <h3>お問合せ</h3>
+                        <p>●施設利用に関するお問い合わせ</p>
+                        <p class="phone-number">0855-83-0221</p>
+
+                        <P>●繋がらない場合は下記の番号まで。</P>
+                            　電話　080-2333-5966</p>
+                        <a href="#" class="button secondary-button">メールでのお問い合わせ</a>
+                        <!-- <a href="#" class="button secondary-button">オンライン予約へ</a> -->
+                    </div>
+                    <div class="half-item">
+                        <h3>所在地・アクセス</h3>
                         <p><b>島根県邑智郡邑南町山田４４３－２</b></p>
                         <br>
                         <p>浜田自動車道大朝ICから国道261号で江津方面へ。道の駅邑南の里過ぎて1つ目の信号で県道6号へ右折。出羽郵便局のある交差点で右折し一般道で現地へ。大朝ICから16km</p>
@@ -176,7 +208,8 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 邑南町青少年旅行村 All Rights Reserved.</p>
+            <p>邑南町青少年旅行村指定管理者／邑南リゾート</p>
+            <p>トップページ / プール / オートキャンプ場 / プライバシーポリシー / アクセス / お問い合わせ</p>
         </div>
     </footer>
   <script src="https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"></script>
