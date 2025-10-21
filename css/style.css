@@ -157,6 +157,24 @@ img {
     object-fit: cover;
 }
 
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 動画を親要素の中央に配置し、要素のサイズ基準で位置を調整 */
+    transform: translate(-50%, -50%);
+    
+    /* 要素全体を覆い、はみ出た部分は非表示にする */
+    min-width: 100%;
+    min-height: 100%;
+    
+    /* 縦横比を維持したまま要素を完全に覆う（動画の重要な設定）*/
+    object-fit: cover; 
+    
+    /* オーバーレイやテキストより背景になるように、z-indexを低くする */
+    z-index: -2; 
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
