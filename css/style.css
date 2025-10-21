@@ -59,7 +59,7 @@ img {
 }
 
 .section h2 {
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     margin-bottom: 40px;
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-accent);
@@ -339,7 +339,7 @@ img {
     }
 
     .section h2 {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
 
     .flex-half {
@@ -419,7 +419,7 @@ img {
 
 .map-section h2 {
     /* 既存のh2スタイルを上書きして、地図セクションのタイトルをシンプルにする */
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
     border-bottom: none;
 }
