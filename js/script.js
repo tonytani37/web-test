@@ -22,7 +22,7 @@
         limitedContents.forEach(item => {
             // 日付を整形
             const formattedDate = new Date(item.publishedAt).toLocaleDateString('ja-JP');
-            const linkWithAnchor = `${item.link}#${item.anker}`;
+            const linkWithAnchor = `${item.link}#${item.id}`;
             const articleHtml = `
                 <div class="news-list" style="border-bottom: 0.5px solid #ccc; padding: 1px 0;">
                     <p style="font-size: small; color: gray;" >更新日: ${formattedDate}</p>
