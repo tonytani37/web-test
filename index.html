@@ -33,8 +33,7 @@
 
     <main>
         <section class="hero">
-            <!-- <img src="img\under_construction.jpg" alt="緑に囲まれたキャンプ場の風景" class="hero-image"> -->
-             <video autoplay loop muted playsinline poster="img\under_construction.jpg">
+            <video autoplay loop muted playsinline poster="img\under_construction.jpg">
                 <source src="img/top_movie.mp4" type="video/mp4">
                 お使いのブラウザは動画再生に対応していません。
             </video>
@@ -46,15 +45,14 @@
         </section>
         <section id="news" class="section news-section">
             <div class="container">
-                <a><i class="fa-solid fa-circle-info fa-2x"></i></a>
-                <h2>お知らせ</h2>
-                <ul class="news-list">
-                    <li id="news-list"></li>
-                    <!-- <li><time datetime="2025-10-15">2025.10.15</time> 【重要】冬季営業に関するお知らせを掲載しました。</li>
-                    <li><time datetime="2025-10-01">2025.10.01</time> プールは今季の営業を終了いたしました。</li>
-                    <li><time datetime="2025-09-10">2025.09.10</time> 11月分の宿泊予約受付を開始しました。</li> -->
-                </ul>
-                <a href="#" class="news-more-link">お知らせ一覧を見る &gt;</a>
+                <div class="news-content-flex">
+                    <!-- <a><i class="fa-solid fa-circle-info fa-2x"></i></a> -->
+                    <h2 class="news-title">お知らせ</h2>
+                    <ul class="news-list">
+                        <li id="news-list"></li>
+                        </ul>
+                </div>
+                <a href="#" class="news-more-link">お知らせ一覧を見る ></a>
             </div>
         </section>
         <section id="features" class="section features">
@@ -74,17 +72,11 @@
                         <p>専用ドッグランでペットと一緒にキャンプを楽しめます。</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <i class="fa-solid fa-water-ladder"></i> -->
                         <i class="fa-solid fa-person-swimming"></i>
                         <h3>アトラクションプール</h3>
                         <p>迫力満点のウォータースライダーや、幼児用滑り台なども準備しています。（夏季のみ営業）</p>
                     </div>
-                    <!-- <div class="feature-item">
-                        <i class="fa-solid fa-person-running"></i>
-                        <h3>多目的グラウンド</h3>
-                        <p>１周３００メートルのトラックを完備するグラウンドで自由に身体を動かすことができます。</p>
-                    </div> -->
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -103,28 +95,19 @@
                         <p>木々のささやきや満点の星空を眺めながら、胸いっぱいに深呼吸して自然を思いっきり楽しもう！</p>
                     </div>
                     <div class="site-card">
-                        <!-- <img src="img\jonai_map.png" alt="コテージの画像"> -->
                         <a href="#modal" class="thumbnail-link">
                         <img src="img\jonai_map.png" alt="クリックして拡大" class="thumbnail">
                         </a>
-                        <!-- <div id="modal" class="modal-window">
-                            <div class="modal-content">
-                                <img src="img\large_jonai_map.png" alt="拡大画像" class="modal-image">
-                                
-                                <a href="#sites" class="modal-close">&times;</a>
-                            </div>
-                        </div> -->
                         <h3>場内マップ</h3>
                         <p>森音の里オートキャンプ場を目一杯楽しむための場内マップです。</p>
                     </div>
                 </div>
             </div>
-            <!-- modalで地図を大きく表示させるために、containerから外に出している -->
             <div id="modal" class="modal-window">
                 <div class="modal-content">
                     <img src="img\large_jonai_map.png" alt="拡大画像" class="modal-image">
                     
-                    <a href="#sites" class="modal-close">&times;</a>
+                    <a href="#sites" class="modal-close">×</a>
                 </div>
             </div>
         </section>
@@ -141,31 +124,24 @@
                 </div>
             </div>
         <br>
-        <!-- </section>
-       <section id="resevation" class="section access-info"> -->
-            <div class="container"  id="resevation">
+        <div class="container"  id="resevation">
                 <h2>ご予約</h2>
                 <div class="flex-half">
                     <div class="half-item">
                         <h3>キャンプサイトのご予約</h3>
                         <a href="#" class="button secondary-button">オンライン予約へ</a>
-                        <!-- <p>注）別のサイトが開きます。</p> -->
-                    </div>
+                        </div>
                     <div class="half-item">
                         <h3>注意事項</h3>
-                        <!-- <P>●ご利用開始　4月29日（木）～</P> -->
                         <P>●ご予約は、90日先まで受付可能です。</P>
                         <P>●利用日前日の17：00までに、ご予約下さい。</P>
                         <p>●ご予約は電話で受け付けておりません。</p>
                         <P>●アーリーチェックイン、レイトチェックアウトの対応はしておりません。</P>
-                        <!-- <p>注）別のサイトが開きます。</p> -->
-                    </div>
+                        </div>
                 </div>
             </div>
         <br>
-        <!-- </section> -->
-        <!-- <section id="access" class="section access-info"> -->
-            <div class="container" id="access">
+        <div class="container" id="access">
                 <h2>お問合せ・所在地</h2>
                 <div class="flex-half">
                     <div class="half-item">
@@ -173,16 +149,12 @@
                         <p>●施設利用に関するお問い合わせ</p>
                         <p class="phone-number">0267-48-5623</p>
 
-                        <!-- <P>●繋がらない場合は下記の番号まで。</P>
-                            　電話　080-3333-5959</p> -->
                         <a href="#" class="button secondary-button">メールでのお問い合わせ</a>
-                        <!-- <a href="#" class="button secondary-button">オンライン予約へ</a> -->
-                    </div>
+                        </div>
                     <div class="half-item">
                         <h3>所在地・アクセス</h3>
                         <p><b>〒389-0201 長野県北佐久郡軽井沢町大字追分</b></p>
                         <br>
-                        <!-- <p>浜田自動車道大朝ICから国道261号で江津方面へ。道の駅邑南の里過ぎて1つ目の信号で県道6号へ右折。出羽郵便局のある交差点で右折し一般道で現地へ。大朝ICから16km</p> -->
                         <p><b>【車でお越しの場合】</b></p>
                         <p>
                             上信越自動車道「碓氷軽井沢IC」を降りる
@@ -206,12 +178,10 @@
                         <p>無料駐輪場 有</p>
                     </div> 
                 </div>
-            <!-- https://map.sonysonpo.co.jp/guidecamp/detailMap?account=guidecamp&bid=32010917&pgret=1 ソニー損保のサイト。こっちのほうが情報が詳しい                 -->
             </div>
         </section>
         <section class="section map-section">
             <div class="container">
-                <!-- <h2>📍 現地へのアクセス</h2> -->
                 <div class="map-container">
                     <iframe 
                         src="https://maps.google.com/maps?q=36.33030112537085, 138.55915436926227&z=12&output=embed"
@@ -231,7 +201,7 @@
     <footer class="site-footer">
         <div class="container">
             <p>これは架空のオートキャンプ場で実在しません。</p>
-            <p>&copy; 森の里オートキャンプ場 All Right Reserved</p>
+            <p>© 森の里オートキャンプ場 All Right Reserved</p>
             <p>トップページ / プール / オートキャンプ場 / プライバシーポリシー / アクセス / お問い合わせ</p>
         </div>
     </footer>

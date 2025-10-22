@@ -14,24 +14,24 @@
             newsListContainer.innerHTML = "<p>現在、お知らせはありません。</p>";
             return;
         }
-        const limit = 2; // 表示したい記事の最大件数
-        const limitedContents = res.contents.slice(0, limit); // 先頭から3件を切り出す
+        // const limit = 3; // 表示したい記事の最大件数
+        // const limitedContents = res.contents.slice(0, limit); // 先頭から3件を切り出す
         // console.log(limitedContents)
         // 記事の配列をループ処理
-        // res.contents.forEach(item => {
-        limitedContents.forEach(item => {
+        res.contents.forEach(item => {
+        // limitedContents.forEach(item => {
             // 日付を整形
             const formattedDate = new Date(item.publishedAt).toLocaleDateString('ja-JP');
 
             // 表示するHTML要素を組み立てる
             const articleHtml = `
-                <div class="news-item" style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+                <div class="news-list" style="border-bottom: 0.5px solid #ccc; padding: 1px 0;">
                     <p style="font-size: small; color: gray;">更新日: ${formattedDate}</p>
-                    <h3 style="margin-top: 1px;">${item.title}</h3>
-                    <div class="news-content">${item.content}</div>
+                    <a href="#">${item.title}</a>
+
                 </div>
             `;
-
+            // <div class="news-content">${item.content}</div>
             // 記事コンテナに追加
             newsListContainer.innerHTML += articleHtml;
         });

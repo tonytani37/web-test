@@ -348,6 +348,21 @@ img {
     .half-item {
         margin-bottom: 20px;
     }
+
+    /* お知らせセクション（モバイル） */
+    .news-content-flex {
+        flex-direction: column;
+        align-items: center; /* タイトルを中央に */
+    }
+
+    .news-title {
+        margin-bottom: 20px; /* タイトルとリストの間にスペース */
+    }
+
+    .news-list {
+        width: 100%; /* リストを全幅に */
+        text-align: left; /* リストのテキストを左寄せに */
+    }
 }
 
 @media (max-width: 500px) {
@@ -506,4 +521,64 @@ img {
     color: white;
     text-decoration: none;
     line-height: 1;
+}
+
+/* --- お知らせセクションの左右分割スタイル --- */
+
+.news-content-flex {
+    display: flex;
+    justify-content: center; /* コンテンツ全体を中央寄せ */
+    align-items: flex-start; /* 上端を揃える */
+    gap: 30px; /* 項目間のスペース */
+    max-width: 800px; /* 最大幅を設定して中央に寄せる */
+    margin: 0 auto 20px; /* 中央寄せと下マージン */
+    text-align: left; /* 子要素のテキストを左寄せにリセット */
+}
+
+.news-title {
+    /* 既存の .section h2 スタイルをリセットし、左側のエリアに特化させる */
+    flex-shrink: 0; /* 縮まないようにする */
+    width: 150px; /* 左側エリアの幅を固定 */
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    display: block; /* inline-blockをblockに変更し、親コンテナ内で左寄せにする */
+    margin: 0; /* h2の余計なマージンをリセット */
+    padding-bottom: 5px;
+    text-align: center; /* タイトルのテキストを中央寄せに戻す */
+}
+
+.news-list {
+    flex-grow: 1; /* 残りのスペースを全て占める（右側エリア） */
+    width: auto; /* flex-growが適用されるように調整 */
+    padding: 0; /* ulのリセット */
+    margin: 0; /* ulのリセット */
+    font-size: 1.1rem; /* 少し大きくして見やすく */
+}
+
+.news-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-list time {
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-right: 15px;
+    display: inline-block;
+    min-width: 80px; /* 日付の幅を揃える（任意） */
+}
+
+/* お知らせ一覧を見る リンクの調整 */
+.news-section .news-more-link {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
