@@ -40,3 +40,28 @@
         console.error("コンテンツの取得に失敗しました:", err);
         document.body.innerHTML = "<h1>お知らせの取得中にエラーが発生しました。</h1>";
     });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const pageTopBtn = document.getElementById('page-top');
+
+    // スクロールイベントを監視
+    window.addEventListener('scroll', function() {
+        // 現在のスクロール位置が一定量を超えたらボタンを表示
+        if (window.pageYOffset > 200) { // 200pxスクロールしたら表示
+            pageTopBtn.style.display = 'block';
+        } else {
+            pageTopBtn.style.display = 'none';
+        }
+    });
+
+    // ボタンクリックイベント
+    pageTopBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // デフォルトのアンカーリンク動作を無効にする（ページが瞬間的にトップに戻るのを防ぐ）
+
+        // スムーズスクロール
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // スムーズスクロールを有効にする
+        });
+    });
+});
