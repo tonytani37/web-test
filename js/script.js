@@ -26,7 +26,7 @@
             const articleHtml = `
                 <div class="news-list" style="border-bottom: 0.5px solid #ccc; padding: 1px 0;">
                     <p style="font-size: small; color: gray;" >更新日: ${formattedDate}</p>
-                    <a href="${linkWithAnchor}" target="_blank">
+                    <a href="${linkWithAnchor}">
                         ${item.title}
                     </a>
                 </div>
