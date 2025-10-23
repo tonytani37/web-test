@@ -303,11 +303,12 @@ img {
 
 /* --- Footer --- */
 .site-footer {
-    background-color: var(--color-text); /* 濃いグレー */
+    background-color: var(--color-primary); /* 濃いグレー */
     color: #ccc;
     padding: 20px 0;
-    text-align: center;
-    font-size: 0.9rem;
+    /* text-align: center; */
+    text-align: left;
+    font-size: 1.5rem;
 }
 .resevation-itme {
     display: flex;
