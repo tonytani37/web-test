@@ -303,8 +303,8 @@ img {
 
 /* --- Footer --- */
 .site-footer {
-    background-color: var(--color-primary); /* 濃いグレー */
-    color: #ccc;
+    background-color: var(--color-primary);
+    color: #ffffff;
     padding: 20px 0;
     /* text-align: center; */
     text-align: left;
@@ -602,4 +602,13 @@ img {
 
 #page-top:hover {
     background-color: #2cb766; /* ホバー時の背景色 */
+}
+
+.footer-main-content {
+    display: flex;             /* Flexboxを有効にする */
+    flex-direction: row;    /* デフォルトは縦並び（モバイル向け） */
+    align-items: left;       /* 縦並びの時に中央揃え */
+    gap: 20px;                 /* 要素間の隙間 */
+    margin-bottom: 30px;
+    text-align: left;        /* 全体のテキストを中央に（モバイル向け） */
 }
