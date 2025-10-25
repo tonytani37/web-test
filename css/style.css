@@ -612,3 +612,103 @@ img {
     margin-bottom: 30px;
     text-align: left;        /* 全体のテキストを中央に（モバイル向け） */
 }
+/* --- 問い合わせフォーム専用スタイル --- */
+
+.contact-form {
+    flex-grow: 1; /* 親要素のnews-content-flexの残りのスペースを占める */
+    max-width: 1000px; /* フォームの最大幅を設定 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 30px;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left; /* フォーム内の要素を左寄せに */
+}
+
+.contact-form h2 {
+    /* フォーム内のh2はセクション全体のh2とはスタイルを分離 */
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    display: block; /* 全幅を使う */
+    text-align: center; /* タイトルは中央寄せ */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.required-tag {
+    background-color: #E74C3C; /* 赤色 */
+    color: var(--color-light);
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.error-message {
+    color: #E74C3C;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form-status {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* モバイル調整 (768px以下の場合) */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森の里オートキャンプ場 | 公式サイト</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="icon" href="img\tree-solid-full.png" type="image/x-icon">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a><i class="fa-solid fa-tree fa-lg"></i></a>
+                <a href="index.html">森の里オートキャンプ場</a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#features">３つの特徴</a></li>
+                    <li><a href="index.html#sites">施設のご紹介</a></li>
+                    <li><a href="index.html#price">料金</a></li>
+                    <li><a href="index.html#resevation">ご予約</a></li>
+                    <li><a href="index.html#access">お問い合わせ・所在地</a></li>
+                    <li><a href="https://www.instagram.com/tonytani37/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+       <section id="news" class="section news-section">
+            <div class="container">
+                <div class="news-content-flex">
+                    <form id="contactForm" class="contact-form">
+                        <h2>お問い合わせフォーム</h2>
+
+                        <div class="form-group">
+                            <label for="name">お名前 <span class="required-tag">必須</span></label>
+                            <input type="text" id="name" name="name" required placeholder="山田 太郎" maxlength="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">メールアドレス <span class="required-tag">必須</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailConfirm">メールアドレス（確認） <span class="required-tag">必須</span></label>
+                            <input type="email" id="emailConfirm" name="emailConfirm" required placeholder="your@example.com">
+                            <p id="emailMismatch" class="error-message" style="display:none;">メールアドレスが一致しません。</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry">お問い合わせ内容 (500文字以内) <span class="required-tag">必須</span></label>
+                            <textarea id="inquiry" name="inquiry" required maxlength="500" placeholder="具体的な内容をご記入ください。"></textarea>
+                            <p id="charCount" class="char-counter">0 / 500 文字</p>
+                        </div>
+                        <button type="submit" class="button primary-button submit-button">
+                            問い合わせを送信する
+                        </button>
+                                <p id="formStatus" class="form-status" style="display:none;"></p>
+                    </form>
+                </div>
+                <a href="index.html" class="news-more-link">戻る ></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main-content">
+                <div class="footer-logo">
+                    <img src="img/mark.png" alt="森の里オートキャンプ場ロゴ" width="200">
+                </div>
+                <div class="footer-info">
+                    <h3>森の里オートキャンプ場</h3>
+                    <p>〒389-0201 長野県北佐久郡軽井沢町大字追分</p>
+                    <p style="font-size: 0.7em;">これは実在しない架空のオートキャンプ場紹介ページです。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="page-top">TOP</a>
+  <script src="https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"></script>
+  <script src="js\script_list.js"></script>
+  </body>
+</html>
