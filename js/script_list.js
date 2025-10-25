@@ -1,12 +1,14 @@
     // Flaskサーバーのアドレス（例: 開発環境のローカルホスト）
     // 本番環境では、Cloud Runなどにデプロイされた公開URLに置き換えます。
     const FLASK_PROXY_BASE_URL = 'https://cms-api-281456272382.us-east1.run.app/api/v1';
+    // const FLASK_PROXY_BASE_URL = 'http://localhost:8080/api/v1';
+
 
     // MicroCMSのコンテンツエンドポイント（例: blogs）とクエリパラメータ
     const endpoint = 'news';
     const queryParams = new URLSearchParams({
         limit: 10,
-        fields: 'id,title,publishedAt,link,anker,content' // 取得フィールドを制限
+        fields: 'id,class,title,publishedAt,link,anker,content' // 取得フィールドを制限
     });
 
     const url = `${FLASK_PROXY_BASE_URL}/${endpoint}?${queryParams.toString()}`;
@@ -37,7 +39,7 @@
                 const articleHtml = `
                 <div class="news-list" style="border-bottom: 1.5px solid #006a00ff; padding: 1px 0;">
                     <p style="font-size: small; color: gray;" id="${item.anker}">更新日: ${formattedDate}</p>
-                    <h3> ${item.title} </h3>
+                    <h3> ${item.class}${item.title} </h3>
                     <p> ${item.content}</p>
                 </div><br>
                 `;

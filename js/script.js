@@ -7,7 +7,7 @@
     const endpoint = 'news';
     const queryParams = new URLSearchParams({
         limit: 3,
-        fields: 'id,title,publishedAt,link' // 取得フィールドを制限
+        fields: 'id,class,title,publishedAt,link' // 取得フィールドを制限
     });
 
     const url = `${FLASK_PROXY_BASE_URL}/${endpoint}?${queryParams.toString()}`;
@@ -42,7 +42,7 @@
                     <div class="news-list" style="border-bottom: 0.5px solid #ccc; padding: 1px 0;">
                         <p style="font-size: small; color: gray;" >更新日: ${formattedDate}</p>
                         <a href="${linkWithAnchor}">
-                            ${item.title}
+                            ${item.class}${item.title}
                         </a>
                     </div>
                 `;
