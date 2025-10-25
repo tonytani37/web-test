@@ -39,7 +39,7 @@
                 const articleHtml = `
                 <div class="news-list" style="border-bottom: 1.5px solid #006a00ff; padding: 1px 0;">
                     <p style="font-size: small; color: gray;" id="${item.anker}">更新日: ${formattedDate}</p>
-                    <h3> ${item.class}${item.title} </h3>
+                    <h2> ${item.class}${item.title} </h2>
                     <p> ${item.content}</p>
                 </div><br>
                 `;
