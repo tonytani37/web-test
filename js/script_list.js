@@ -1,6 +1,6 @@
     // Flaskサーバーのアドレス（例: 開発環境のローカルホスト）
     // 本番環境では、Cloud Runなどにデプロイされた公開URLに置き換えます。
-    const FLASK_PROXY_BASE_URL = 'https://cms-api-281456272382.us-east1.run.app/api/v1';
+    const FLASK_PROXY_BASE_URL = 'https://t-cms-api-281456272382.asia-northeast2.run.app/api/v1';
     // const FLASK_PROXY_BASE_URL = 'http://localhost:8080/api/v1';
 
 
