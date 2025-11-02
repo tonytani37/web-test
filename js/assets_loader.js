@@ -1,6 +1,6 @@
 // 1. GCSのベースURLを変数として定義
-// const GCS_BASE_URL = 'https://storage.googleapis.com/react-images-tonytani37/mori-no-sato/statics/img/';
-const GCS_BASE_URL = 'img/';
+const GCS_BASE_URL = 'https://storage.googleapis.com/react-images-tonytani37/mori-no-sato/statics/img/';
+// const GCS_BASE_URL = 'img/';
 
 
 // 2. ページロード完了後に画像パスを動的に設定する関数
