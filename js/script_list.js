@@ -1,7 +1,8 @@
     // Flaskサーバーのアドレス（例: 開発環境のローカルホスト）
     // 本番環境では、Cloud Runなどにデプロイされた公開URLに置き換えます。
     // const FLASK_PROXY_BASE_URL = 'https://t-cms-api-281456272382.asia-northeast2.run.app/api/v1';
-    const FLASK_PROXY_BASE_URL = 'https://cms-api-node.vka77606.workers.dev/api/v1';
+    // const FLASK_PROXY_BASE_URL = 'https://cms-api-node.vka77606.workers.dev/api/v1';
+    const FLASK_PROXY_BASE_URL = 'https://microcms-proxy-281456272382.asia-northeast1.run.app/api/v1';
 
 
     // MicroCMSのコンテンツエンドポイント（例: blogs）とクエリパラメータ
