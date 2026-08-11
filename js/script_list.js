@@ -3,7 +3,8 @@
     // const FLASK_PROXY_BASE_URL = 'https://t-cms-api-281456272382.asia-northeast2.run.app/api/v1';
     // const FLASK_PROXY_BASE_URL = 'https://cms-api-node.vka77606.workers.dev/api/v1';
     // const FLASK_PROXY_BASE_URL = 'https://microcms-proxy-281456272382.asia-northeast1.run.app/api/v1';
-    import { FLASK_PROXY_BASE_URL } from './config.js';
+    import { BASE_URL } from './config.js';
+    const FLASK_PROXY_BASE_URL = BASE_URL
 
 
     // MicroCMSのコンテンツエンドポイント（例: blogs）とクエリパラメータ
