@@ -1,125 +1,93 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================================
-    // 共通：microCMSデータ取得・描画関数
+    // 1. 共通：microCMSデータ取得・描画関数
     // =========================================================
-    const fetchAndRenderNews = ({ containerSelector, limit, fields, renderHtml }) => {
+    const fetchAndRender = ({ containerSelector, endpoint, limit, fields, renderHtml }) => {
         const container = document.querySelector(containerSelector);
         if (!container) return;
 
-        // 初期メッセージをクリア
-        container.innerHTML = '';
-
         const FLASK_PROXY_BASE_URL = 'https://microcms-proxy-281456272382.asia-northeast1.run.app/api/v1';
-        const endpoint = 'company';
-        const queryParams = new URLSearchParams({ limit, fields });
-        const url = `${FLASK_PROXY_BASE_URL}/${endpoint}?${queryParams.toString()}`;
+        const url = `${FLASK_PROXY_BASE_URL}/${endpoint}?${new URLSearchParams({ limit, fields })}`;
 
         fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
             .then(res => {
                 if (!res.contents || res.contents.length === 0) {
-                    container.innerHTML = "<p style=\"text-align: center; color: #888; padding: 10px;\">現在、お知らせはありません。</p>";
+                    container.innerHTML = "<p>現在、お知らせはありません。</p>";
                     return;
                 }
-
-                res.contents.forEach(item => {
-                    container.innerHTML += renderHtml(item);
-                });
+                container.innerHTML = res.contents.map(renderHtml).join('');
             })
             .catch(err => {
-                console.error("コンテンツの取得に失敗しました:", err);
-                container.innerHTML = `
-                    <li style="text-align: center; color: red; padding: 10px;">
-                        データ取得に失敗しました。時間をおいて再度お試しください。
-                    </li>
-                `;
+                console.error("データ取得エラー:", err);
+                container.innerHTML = "<p>データの取得に失敗しました。</p>";
             });
     };
 
-    // =========================================================
-    // 1-1. 詳細表示用（#js-news）の呼び出し
-    // =========================================================
-    fetchAndRenderNews({
-        containerSelector: '#js-news',
-        limit: 100,
-        fields: 'info,title,comment,img,publishedAt',
-        renderHtml: (item) => {
-            const formattedDate = new Date(item.publishedAt).toLocaleDateString('ja-JP', { 
-                year: 'numeric', month: '2-digit', day: '2-digit' 
-            });
-            
-            // 前のコードの書き方を生かす場合
-            const imgValue = item.img ?? { url: "statics/img/imfomation.webp" };
-
-            return `
-                <div>
-                    <br>
-                    <p>${formattedDate}</p>
-                    <p class="news-title">${item.info} ${item.title}</p>
-                    <br>
-                    <p>${item.comment}</p>
-                    <br>
-                    <!-- 前と同じように ?W=300 をつける -->
-                    <img src="${imgValue.url}?W=300">
-                </div>
-                <br>
-                <hr>
-            `;
-        }
+    // ニュース取得の実行例（状況に合わせて適宜呼び出す）
+    fetchAndRender({
+        containerSelector: '#news-list',
+        endpoint: 'news',
+        limit: 10,
+        fields: 'id,class,title,publishedAt,link,anker,content',
+        renderHtml: (item) => `
+            <div class="news-list" style="border-bottom: 1.5px solid #006a00ff; padding: 1px 0;">
+                <p style="font-size: small; color: gray;" id="${item.anker}">更新日: ${new Date(item.publishedAt).toLocaleDateString('ja-JP')}</p>
+                <h2>${item.class}${item.title}</h2>
+                <p>${item.content}</p>
+            </div><br>`
     });
 
     // =========================================================
-    // 1-2. リスト表示用（#js-news-list）の呼び出し
+    // 2. ページトップボタン
     // =========================================================
-    fetchAndRenderNews({
-        containerSelector: '#js-news-list',
-        limit: 3,
-        fields: 'info,title,publishedAt',
-        renderHtml: (item) => {
-            const formattedDate = new Date(item.publishedAt).toLocaleDateString('ja-JP', { 
-                year: 'numeric', month: '2-digit', day: '2-digit' 
-            });
-
-            return `
-                <li>
-                    <time>${formattedDate}</time>
-                    <span>${item.info}</span>
-                    <p>${item.title}</p>
-                </li>
-            `;
-        }
-    });
-
-    // =========================================================
-    // 2. 事業概要カード (business-summary) スクロール出現アニメーション
-    // =========================================================
-    const cards = document.querySelectorAll('.business-summary .card');
-
-    if (cards.length > 0) {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, options);
-
-        cards.forEach(card => {
-            observer.observe(card);
+    const pageTopBtn = document.getElementById('page-top');
+    if (pageTopBtn) {
+        window.addEventListener('scroll', () => {
+            pageTopBtn.style.display = (window.pageYOffset > 200) ? 'block' : 'none';
+        });
+        pageTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
+    // =========================================================
+    // 3. お問い合わせフォームバリデーション
+    // =========================================================
+    const form = document.getElementById('contactForm');
+    if (form) {
+        const emailInput = document.getElementById('email');
+        const emailConfirm = document.getElementById('emailConfirm');
+        const inquiry = document.getElementById('inquiry');
+        const charCount = document.getElementById('charCount');
+
+        const validate = () => {
+            const isMatch = emailInput.value === emailConfirm.value;
+            emailConfirm.setCustomValidity(isMatch ? '' : 'メールアドレスが一致しません');
+            document.getElementById('emailMismatch').style.display = isMatch ? 'none' : 'block';
+            
+            const len = inquiry.value.length;
+            charCount.textContent = `${len} / 500 文字`;
+            charCount.style.color = (len > 500) ? '#E74C3C' : '#666';
+            inquiry.setCustomValidity(len > 500 ? '500文字を超えています' : '');
+        };
+
+        [emailInput, emailConfirm, inquiry].forEach(el => el.addEventListener('input', validate));
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!form.checkValidity()) return alert('入力内容を確認してください。');
+            
+            const status = document.getElementById('formStatus');
+            status.style.display = 'block';
+            status.textContent = '送信中...';
+            setTimeout(() => {
+                status.textContent = 'お問い合わせを受け付けました。';
+                form.reset();
+                validate();
+            }, 3000);
+        });
+    }
 });
