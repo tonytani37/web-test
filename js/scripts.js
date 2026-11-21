@@ -17,7 +17,7 @@ function initNewsList() {
     const container = document.querySelector('#news-list');
     if (!container) return; // このページにお知らせ欄が無ければ何もしない
 
-    const FLASK_PROXY_BASE_URL = 'https://microcms-proxy-281456272382.asia-northeast1.run.app/api/v1';
+    const FLASK_PROXY_BASE_URL = 'https://microcms-proxy.vka77606.workers.dev/api/v1';
     // const FLASK_PROXY_BASE_URL = 'http://localhost:8080/api/v1';
     const endpoint = 'news';
 
